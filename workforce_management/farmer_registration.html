@@ -1,0 +1,99 @@
+<!-- This is farmer_registration.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"], input[type="button"] {
+            background-color: #98af4c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        .go-back-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            width: fit-content;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 0.5s ease;
+        }
+        .go-back-btn:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm" action="farmer_data_registration.php" method="post">
+        <label for="farmer_id">Farmer_id:</label>
+        <input type="text" id="farmer_id" name="farmer_id" required>
+
+        <label for="farmer_name">Farmer_name:</label>
+        <input type="text" id="farmer_name" name="farmer_name" required>
+
+        <label for="phone_no">Phone Number:</label>
+        <input type="text" id="phone_no" name="phone_no" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <button class="go-back-btn" onclick="window.history.back()">Go Back</button>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var phoneNumber = document.getElementById('phone_no').value;
+            if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+                alert('Please enter a valid 10-digit phone number.');
+                event.preventDefault(); // Prevent the form from submitting
+            }
+        });
+    </script>
+</body>
+</html>

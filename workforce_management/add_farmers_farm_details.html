@@ -1,0 +1,89 @@
+<!-- this is add_farmers_farm_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Data Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* Additional style for the button */
+        .go-to-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .go-to-button a {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .go-to-button a:hover {
+            background-color: #005f7b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Farm Data Entry Form</h1>
+    <form action="farm_data_registration.php" method="post">
+        <label for="farm_id">Farm ID:</label>
+        <input type="text" id="farm_id" name="farm_id" required>
+
+        <label for="farm_name">Farm Name:</label>
+        <input type="text" id="farm_name" name="farm_name" required>
+
+        <label for="farm_location">Farm Location:</label>
+        <input type="text" id="farm_location" name="farm_location" required>
+
+        <label for="farm_crop">Crop:</label>
+        <input type="text" id="farm_crop" name="farm_crop" required>
+
+        <label for="farmer_id">Farmer ID:</label>
+        <input type="text" id="farmer_id" name="farmer_id" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Button to go to booking.php -->
+    <div class="go-to-button">
+        <a href="booking.php">Go back to Farm details</a>
+    </div>
+</body>
+</html>

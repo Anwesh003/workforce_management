@@ -1,0 +1,79 @@
+<!-- This is main.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex; /* Use flexbox to make the body a flex container */
+            flex-direction: column; /* Arrange children vertically */
+            min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+        }
+        #app-bar {
+            background-color: #2CA02C; /* Changed background color to Farmer's color */
+            color: #fff;
+            padding: 2px 5px; /* Adjusted padding */
+            text-align: center;
+            display: flex; /* Use flexbox to center items horizontally */
+            justify-content: center; /* Center items horizontally */
+            position: relative; /* Added position relative for positioning the logout button */
+        }
+        /* Style for the logout button */
+        .logout-button {
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            position: absolute; /* Added position absolute for positioning */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Center vertically */
+            right: 10px; /* Adjusted right position */
+        }
+        .logout-button:hover {
+            background-color: #fff;
+            color: #333;
+        }
+        #content {
+            flex: 1; /* Make content take up remaining space */
+            display: flex; /* Use flexbox for content as well */
+        }
+        iframe {
+            width: 100%; /* Ensure iframe takes up full width of its container */
+            border: none; /* Remove iframe border */
+        }
+    </style>
+</head>
+<body>
+    <div id="app-bar">
+        <!-- App Bar Content -->
+        <h1>AGRICULTURAL WORKFORCE MANAGEMENT HUB</h1>
+        <a class="logout-button" onclick="confirmLogout()">Logout</a> <!-- Moved logout button here -->
+    </div>
+    <div id="content">
+        <!-- Main Content -->
+        <iframe src="login.html"></iframe>
+    </div>
+
+    <!-- Script for Logout Functionality -->
+    <script>
+        function confirmLogout() {
+            // Display confirmation prompt
+            if (confirm("Are you sure you want to logout?")) {
+                // If user confirms logout, redirect to main.html
+                window.location.href = "main.html";
+            }
+        }
+    </script>
+</body>
+</html>

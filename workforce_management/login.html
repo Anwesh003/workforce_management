@@ -1,0 +1,116 @@
+<!-- This is login.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORKFORCE MANAGEMENT</title>
+    <style>
+        body {
+            margin: 0; /* Reset default margin */
+            padding: 0; /* Reset default padding */
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            background-image: url('login.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: rgba(219, 239, 226, 0.9); 
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            margin: 0 20px; /* Added margin */
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Additional styles */
+        .login-container h2 {
+            font-size: 24px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #4CAF50;
+        }
+
+        /* Added styles for layout */
+        .login-container-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Added styles for signup buttons */
+        .signup-button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .signup-button:hover {
+            background-color: #004C6D;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container-wrapper">
+        <div class="login-container">
+            <h2>Farmer login</h2>
+            <form action="farmer_login.php" method="post">
+                <input type="text" name="farmer_id" placeholder="Farmer ID" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+            <button onclick="location.href='farmer_registration.html';" class="signup-button">Signup as Farmer</button>
+        </div>
+        <div class="login-container">
+            <h2>Worker login</h2>
+            <form action="worker_login.php" method="post">
+                <input type="text" name="worker_id" placeholder="Worker ID" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+            <button onclick="location.href='worker_registration.html';" class="signup-button">Signup as Worker</button>
+        </div>
+    </div>
+</body>
+</html>
